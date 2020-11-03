@@ -6,7 +6,6 @@
 package com.mycompany.m03uf05review.generics.Collections;
 
 import java.util.ArrayList;
-import static java.util.Collections.max;
 import java.util.Iterator;
 import java.util.List;
 
@@ -70,9 +69,16 @@ public class GenericsMain {
      * */
     public static Integer maximo(List<Integer> lista) {
         if (!lista.isEmpty()) {
-            Integer max = max(lista);
-            System.out.println(max);
-            return max;
+            int grande = lista.get(0);
+            int size = lista.size();
+            for (int i = 0; i < size; i++) {
+                if (lista.get(i) > grande) {
+                    grande = lista.get(i);
+                }
+            }
+            System.out.println(grande);
+            return grande;
+
         } else {
             return 0;
         }
@@ -110,7 +116,7 @@ public class GenericsMain {
         listaD.add(10.9);
         listaD.add(5.9);
         listaD.add(4.0);
-        
+
         List<Integer> listaE = new ArrayList<>();
         listaE.add(4);
         listaE.add(14);
